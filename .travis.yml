@@ -1,12 +1,16 @@
-language: node_js 
-node_js: 
+language: node_js
+os:
+  - linux
+dist: xenial
+node_js:
+  - stable
 
-  - "stable" 
-
-deploy: 
-  provider: pages 
-  skip_cleanup: true 
-  github_token: $GITHUB_TOKEN 
-  local_dir: build 
-  on: 
-    branch: main 
+deploy:
+  provider: pages
+  strategy: git
+  skip_cleanup: true
+  local_dir: build
+  token: $GITHUB_TOKEN
+  on:
+    branch: 
+      - main
