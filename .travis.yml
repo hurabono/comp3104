@@ -5,6 +5,9 @@ dist: focal
 node_js:
   - "14"  
 
+install:
+  - npm install
+
 script:
   - npm install
   - npm run build
@@ -12,6 +15,7 @@ script:
 cache:
   directories:
     - node_modules
+  npm: false
 
 
 deploy:
